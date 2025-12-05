@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    /* Basic */
+    "target": "es2022",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "lib": ["es2022"],
+    "allowJs": false,
+    "resolveJsonModule": true,
+
+    /* Emit & project layout */
+    "noEmit": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+
+    /* Type checking */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "skipLibCheck": true,
+
+    /* ESM / interop */
+    "esModuleInterop": true,
+    "allowImportingTsExtensions": false,
+
+    /* JSX if you need it */
+    "jsx": "react-jsx",
+
+    /* Useful */
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "types": []
+  },
+
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"],
+
+  /*
+    ts-node specific settings (ts-node will read this section when using the ESM loader)
+    - "esm": true enables ts-node's ESM handler
+    - "transpileOnly": true speeds up dev (no type checking at runtime)
+    If you want full runtime type checking remove transpileOnly or run tsc separately.
+  */
+  "ts-node": {
+    "esm": true,
+    "transpileOnly": true
+  }
+}
