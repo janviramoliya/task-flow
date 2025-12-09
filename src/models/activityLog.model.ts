@@ -24,7 +24,8 @@ const activityLogSchema = new mongoose.Schema(
     },
     // Target entity info (generic)
     entity: {
-      type: String, // 'Task', 'Project', 'Comment', 'Workspace'
+      type: String,
+      enum: ["Task", "Project", "Comment", "Workspace"],
       required: true,
       index: true,
     },

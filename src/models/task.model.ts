@@ -4,6 +4,7 @@ export interface ITask extends Document {
   project: Schema.Types.ObjectId;
   title: string;
   description: string;
+  workspace: Schema.Types.ObjectId;
   creator: Schema.Types.ObjectId;
   assignees: Schema.Types.ObjectId[];
   status: "pending" | "in_progress" | "completed" | "on_hold";
@@ -32,6 +33,10 @@ const taskSchema = new mongoose.Schema<ITask>(
     project: { type: Schema.Types.ObjectId, ref: "Project", index: true },
     title: { type: String, required: true, index: true },
     description: String,
+    workspace: {
+      type: Schema.Types.ObjectId,
+      ref: "workspace",
+    },
     creator: { type: Schema.Types.ObjectId, ref: "User", required: true },
     assignees: [{ type: Schema.Types.ObjectId, ref: "User", index: true }],
     status: {

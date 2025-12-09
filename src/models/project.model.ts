@@ -5,6 +5,7 @@ export interface IProject extends Document {
   owner: Schema.Types.ObjectId;
   members: Schema.Types.ObjectId[];
   description: string;
+  workspace: Schema.Types.ObjectId;
   visibility: "public" | "private" | "workspace";
   createdAt: Date;
   updatedAt: Date;
@@ -27,6 +28,10 @@ const projectSchema = new mongoose.Schema<IProject>(
         ref: "User",
       },
     ],
+    workspace: {
+      type: Schema.Types.ObjectId,
+      ref: "workspace",
+    },
     description: {
       type: String,
     },
@@ -41,4 +46,4 @@ const projectSchema = new mongoose.Schema<IProject>(
   }
 );
 
-module.exports = mongoose.model<IProject>("Project", projectSchema);
+export default mongoose.model<IProject>("Project", projectSchema);
