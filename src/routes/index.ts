@@ -9,8 +9,8 @@ const router = express.Router();
 
 router.use("/auth", userRoutes);
 router.use("/workspace", workspaceRoutes);
-router.use("/projects", projectRoutes);
-router.use("/tasks", taskRoutes);
-router.use("/activity-logs", activityLogRoutes);
+router.use("/task", taskRoutes);
+router.use("/project", projectRoutes);
+router.use("/activity-log", activityLogRoutes);
 
 export default router;
